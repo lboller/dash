@@ -2,6 +2,7 @@ runSelectionAsJob <- function() {
 
   ## Get the document context.
   context <- rstudioapi::getActiveDocumentContext()$selection[[1]]$text
+  context <- paste0(context, "\\nping()")
 
   ## if not empty selection
   if (!is.null(context) && context != "") {
